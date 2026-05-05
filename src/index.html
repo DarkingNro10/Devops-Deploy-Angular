@@ -1,13 +1,44 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>PersonalWebsite</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "wm77snhaiq");
+  </script>
 </head>
+
 <body>
   <app-root></app-root>
+
+  <!-- Google Analytics (Firebase) -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-analytics.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCOmAEN0ABa00aHenrrgmDqJp7Ud1NDSJE",
+      authDomain: "prueba1-90aa3.firebaseapp.com",
+      projectId: "prueba1-90aa3",
+      storageBucket: "prueba1-90aa3.firebasestorage.app",
+      messagingSenderId: "319446563489",
+      appId: "1:319446563489:web:891b961499580905b70ee0",
+      measurementId: "G-JZN2D91LWY"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
 </body>
+
 </html>

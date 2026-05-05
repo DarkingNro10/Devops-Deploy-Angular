@@ -1,0 +1,94 @@
+.hero {
+  min-height: calc(100vh - 150px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 20px 20px;
+}
+
+.hero-content {
+  max-width: 1000px;
+  text-align: center;
+}
+
+.hero-title {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.greeting {
+  font-size: 3rem;
+  background: linear-gradient(to right, #f8fafc, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.roles {
+  font-size: 2rem;
+  color: var(--accent-dev);
+  text-shadow: var(--accent-glow);
+}
+
+.hero-description {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto 50px;
+}
+
+.hero-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.hero-card {
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  cursor: pointer;
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero-card h3 {
+  font-size: 1.5rem;
+}
+
+.hero-card p {
+  color: var(--text-muted);
+}
+
+.dev-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+  border-color: var(--accent-dev);
+}
+.dev-card:hover h3, .dev-card:hover .card-icon { color: var(--accent-dev); }
+
+.game-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(236, 72, 153, 0.2);
+  border-color: var(--accent-game);
+}
+.game-card:hover h3, .game-card:hover .card-icon { color: var(--accent-game); }
+
+.music-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.2);
+  border-color: var(--accent-music);
+}
+.music-card:hover h3, .music-card:hover .card-icon { color: var(--accent-music); }
+
+@media (max-width: 768px) {
+  .greeting { font-size: 2.2rem; }
+  .roles { font-size: 1.5rem; }
+}

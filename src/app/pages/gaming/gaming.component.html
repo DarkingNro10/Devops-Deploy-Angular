@@ -1,0 +1,22 @@
+<section class="page-container animate-fade-in">
+  <div class="page-header">
+    <h1 class="page-title">My <span class="accent-game">Gaming</span> Vault</h1>
+    <p class="page-subtitle">A collection of virtual worlds I've explored and conquered.</p>
+  </div>
+
+  <div class="games-grid">
+    @for (game of games; track $index) {
+      <div class="game-card glass-panel">
+        <div class="game-icon" [innerHTML]="game.icon"></div>
+        <div class="game-info">
+          <h3>{{ game.title }}</h3>
+          <span class="game-genre">{{ game.genre }}</span>
+        </div>
+        <div class="game-stats">
+          <span class="stat-label">Playtime</span>
+          <span class="stat-value">{{ game.hours }}</span>
+        </div>
+      </div>
+    }
+  </div>
+</section>

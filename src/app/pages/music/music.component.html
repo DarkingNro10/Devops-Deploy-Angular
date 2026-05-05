@@ -1,0 +1,20 @@
+<section class="page-container animate-fade-in">
+  <div class="page-header">
+    <h1 class="page-title">My <span class="accent-music">Music</span></h1>
+    <p class="page-subtitle">Tracks that inspire me, keep me focused, and bring the vibes.</p>
+  </div>
+
+  <div class="music-grid">
+    @for (track of tracks; track $index) {
+      <div class="track-card glass-panel">
+        <div class="track-cover" [innerHTML]="track.cover"></div>
+        <div class="track-info">
+          <h3>{{ track.title }}</h3>
+          <p>{{ track.artist }}</p>
+        </div>
+        <div class="track-duration">{{ track.duration }}</div>
+        <button class="play-btn">&#9658;</button>
+      </div>
+    }
+  </div>
+</section>

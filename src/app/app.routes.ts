@@ -3,11 +3,13 @@ import { HomeComponent } from './pages/home/home.component';
 import { MusicComponent } from './pages/music/music.component';
 import { GamingComponent } from './pages/gaming/gaming.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'music', component: MusicComponent },
   { path: 'gaming', component: GamingComponent },
   { path: 'projects', component: ProjectsComponent },
+  { path: 'contact', component: ContactComponent },
   { path: '**', redirectTo: '' }
 ];

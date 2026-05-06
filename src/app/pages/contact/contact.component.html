@@ -1,0 +1,105 @@
+<section class="contact-section animate-fade-in">
+  <div class="container">
+    <div class="section-header">
+      <h1 class="gradient-text">Get in Touch</h1>
+      <p>Have a project in mind or just want to say hi? Drop me a message below.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info glass-panel">
+        <h3>Contact Information</h3>
+        <p>Feel free to reach out through any of these channels.</p>
+        
+        <div class="info-item">
+          <span class="icon">📧</span>
+          <div class="details">
+            <span class="label">Email</span>
+            <span class="value">marco&#64;example.dev</span>
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <span class="icon">📍</span>
+          <div class="details">
+            <span class="label">Location</span>
+            <span class="value">San Francisco, CA</span>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <a href="#" class="social-icon">GitHub</a>
+          <a href="#" class="social-icon">LinkedIn</a>
+          <a href="#" class="social-icon">Twitter</a>
+        </div>
+      </div>
+
+      <div class="contact-form-container glass-panel">
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" *ngIf="!success">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input 
+              type="text" 
+              id="name" 
+              formControlName="name" 
+              placeholder="Your Name"
+              [class.error]="submitted && contactForm.get('name')?.errors"
+            >
+            <div class="error-message" *ngIf="submitted && contactForm.get('name')?.errors">
+              Name is required (min 3 characters).
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input 
+              type="email" 
+              id="email" 
+              formControlName="email" 
+              placeholder="your@email.com"
+              [class.error]="submitted && contactForm.get('email')?.errors"
+            >
+            <div class="error-message" *ngIf="submitted && contactForm.get('email')?.errors">
+              Please enter a valid email address.
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <select id="subject" formControlName="subject" [class.error]="submitted && contactForm.get('subject')?.errors">
+              <option value="" disabled selected>Select a subject</option>
+              <option value="General Inquiry">General Inquiry</option>
+              <option value="Project Proposal">Project Proposal</option>
+              <option value="Collaboration">Collaboration</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea 
+              id="message" 
+              formControlName="message" 
+              rows="5" 
+              placeholder="How can I help you?"
+              [class.error]="submitted && contactForm.get('message')?.errors"
+            ></textarea>
+            <div class="error-message" *ngIf="submitted && contactForm.get('message')?.errors">
+              Message is too short (min 10 characters).
+            </div>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            Send Message
+          </button>
+        </form>
+
+        <div class="success-message animate-fade-in" *ngIf="success">
+          <div class="success-icon">✓</div>
+          <h2>Message Sent!</h2>
+          <p>Thank you for reaching out. I'll get back to you as soon as possible.</p>
+          <button (click)="success = false; contactForm.reset()" class="btn-secondary">Send another message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
